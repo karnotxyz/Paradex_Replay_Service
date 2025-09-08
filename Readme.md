@@ -22,6 +22,30 @@ i.e :
 Based on the support, you will require `Madara database` >=  95270 Paradex blocks.
 _Contact for support here !_
 
+## Changes to run with operator :
+
+### Madara docker image.
+  - Update the docker image of Madara being used in operator to the one provided above.
+
+### Update `madara-chain-config` ConfigMap .
+  - Replace the `madara-chain-config` with `configs/paradex.yaml`
+  - Based on the version of `SN_STACK` being used for blocks, change field :
+    `latest_protocol_version`: "SN_VERSION"
+    - `0.13.2` - Block `95271` to `559325`
+    - `0.13.5` - Block `559326` to `latest`
+
+
+### Disable Madara Bootstrapper & Orchestrator Service in Operator CRD.
+  - using the `MadaraInstanceType` CRD, just changes it's replicas to 0.
+
+
+### Use prepared database.
+  - Use `volume mount` to mount the database folder.
+  - _Contact for support_ to get assistance for the database.
+
+### Run Replay Service independently (/externally) from the operator.
+  - Docker image tag, envs, command, api provided in this document.
+  - We can provide a helm chart for this or it can also be manually setup as described in the document here.
 
 ## Commands :
 
