@@ -12,8 +12,10 @@ i.e :
 
 - Madara : [paradex_sync_d13b45c1b041bfa6b490f15ce21509d50ac15fd1](https://hub.docker.com/layers/prkpandey942/madara/paradex_sync_d13b45c1b041bfa6b490f15ce21509d50ac15fd1/images/sha256-df6625997176672a640bc05b9d05fe238cf430935692ce9f2da51ecefe480726)
 - Replay Service: [d809c15fb74dd6c33559773a590ae7adec43787b_runner](https://hub.docker.com/layers/prkpandey942/transaction_syncing_service/d809c15fb74dd6c33559773a590ae7adec43787b_runner/images/sha256-4ead1f28fb3b72b5e1fec0b8c808d2c85777020f27766152507b7c7e950c6a44)
-- Paradex Chain Config file
-- Versioned Constants 
+- Paradex Chain Config file, provided in `configs` folder
+- Versioned Constants, provided in `configs` folder
+
+!IMP : Plase note to change the `latest_protocol_version` field to the version you are replaying!
 
 ### Database :
 
