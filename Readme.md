@@ -15,7 +15,7 @@ i.e :
 - Paradex Chain Config file, provided in `configs` folder
 - Versioned Constants, provided in `configs` folder
 
-!IMP : Plase note to change the `latest_protocol_version` & `versioned_constants_path` fields in `configs/paradex.yaml` to the version you are replaying
+!IMP : Plase note to change the `latest_protocol_version` field in `configs/paradex.yaml` to the version you are replaying
 
 ### Database :
 
