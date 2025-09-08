@@ -4,11 +4,11 @@
 This is a transaction replay service, it picks up transaction from one node (hear-on : original node) and replays them to another node (here-on : syncing node).
 
 The service currently supports Paradex blocks 95271 till latest.
-i.e : 
+i.e :
 - `0.13.2` & above.
 
 ## Pre-requisites :
-### Images : 
+### Images :
 
 - Madara : [paradex_sync_d13b45c1b041bfa6b490f15ce21509d50ac15fd1](https://hub.docker.com/layers/prkpandey942/madara/paradex_sync_d13b45c1b041bfa6b490f15ce21509d50ac15fd1/images/sha256-df6625997176672a640bc05b9d05fe238cf430935692ce9f2da51ecefe480726)
 - Replay Service: [d809c15fb74dd6c33559773a590ae7adec43787b_runner](https://hub.docker.com/layers/prkpandey942/transaction_syncing_service/d809c15fb74dd6c33559773a590ae7adec43787b_runner/images/sha256-4ead1f28fb3b72b5e1fec0b8c808d2c85777020f27766152507b7c7e950c6a44)
@@ -41,10 +41,10 @@ docker run -d \
   -e RPC_URL_ORIGINAL_NODE=PARADEX_NETWORK_NODE_RPC_URL \
   -e RPC_URL_SYNCING_NODE=MADARA_NODE_RPC_URL \
   -e ADMIN_RPC_URL_SYNCING_NODE=MADARA_NODE_ADMIN_RPC_URL \
-  prkpandey942/transaction_syncing_service:d809c15fb74dd6c33559773a590ae7adec43787b_runner
+  DOCKER_IMAGE_TAG
 ```
 
-### Madara : 
+### Madara :
 ```sh
 docker run -d \
   --name madara \
@@ -55,7 +55,7 @@ docker run -d \
   -v /path/to/configs:/configs \
   -e RPC_URL_ORIGINAL_NODE=PARADEX_NETWORK_NODE_RPC_URL/rpc/v0_8 \
   -e RUST_LOG=info \
-  prkpandey942/madara:paradex_sync_d13b45c1b041bfa6b490f15ce21509d50ac15fd1 \
+  DOCKER_IMAGE_TAG \
   --name madara \
   --base-path /data \
   --rpc-port 9944 \
